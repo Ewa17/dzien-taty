@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pytanie 2</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #001f3f, #0074D9);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    .quiz-box {
+      background-color: #f0f8ff;
+      border: 3px solid #0074D9;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .quiz-box h1 {
+      color: #FF4136;
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .quiz-box p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .answers button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #2ECC40;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .answers button:hover {
+      background-color: #01FF70;
+    }
+
+    .error-message {
+      color: #FF4136;
+      margin-top: 15px;
+      font-size: 14px;
+      height: 18px;
+    }
+
+    .heart {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      color: #FF4136;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-box">
+    <div class="heart">❤️</div>
+    <h1>👨‍👧 Pytanie 2 👨‍👧</h1>
+    <p>Ile gramów ważyła Twoja córka jak się urodziła?</p>
+    <div class="answers">
+      <button onclick="checkAnswer('3955')">3955</button>
+      <button onclick="checkAnswer('4170')">4170</button>
+      <button onclick="checkAnswer('4590')">4590</button>
+      <button onclick="checkAnswer('5130')">5130</button>
+    </div>
+    <div id="error" class="error-message"></div>
+  </div>
+
+  <script>
+    function checkAnswer(answer) {
+      const correct = '4170';
+      const nextPage = '3.html';
+      const errorDiv = document.getElementById("error");
+
+      if (answer === correct) {
+        window.location.href = nextPage;
+      } else {
+        errorDiv.textContent = "❌ Niestety zła odpowiedź. Spróbuj ponownie!";
+      }
+    }
+  </script>
+</body>
+</html>
